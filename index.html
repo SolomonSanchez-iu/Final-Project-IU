@@ -1,8 +1,17 @@
 <html lang="en">
 
 <head>
+  <!-- Page title -->
+  <title>Final Project D3</title>
+  
   <!-- Load d3 library -->
   <script src="https://d3js.org/d3.v4.js"></script>
+  
+  <!-- Heading -->
+  <style>
+    h1 {text-align: center;}
+  </style>
+  <h1>Crop Recommendation By Parameter</h1>
 
   <!-- Graph Buttons -->
   <button onclick="update('N')">Nitrogen</button>
@@ -32,7 +41,7 @@
       .append("g")
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
-    
+
     // Set Y axis
     var y = d3.scaleLinear()
       .range([ height, 0]);
@@ -76,8 +85,8 @@
             .attr("y", function(d) { return y(d[selectedVar]); })
             .attr("width", x.bandwidth())
             .attr("height", function(d) { return height - y(d[selectedVar]); })
-            .attr("fill", "#69b3a2")
-      })
+            .attr("fill", "darkgoldenrod")
+    })
     }
 
     // Start plot
